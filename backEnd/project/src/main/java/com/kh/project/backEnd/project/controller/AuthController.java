@@ -15,12 +15,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
-@RequestMapping("/auth")
 @RestController
 @Setter
 @Getter
 @ToString
 @RequiredArgsConstructor
+@RequestMapping("/auth")
 public class AuthController {
     private final AuthService authService;
     private final TokenProvider tokenProvider;

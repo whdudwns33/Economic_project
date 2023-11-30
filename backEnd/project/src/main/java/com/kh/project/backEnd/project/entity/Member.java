@@ -27,9 +27,11 @@ public class Member {
     private Authority authority;
 
     @Builder
-    public Member(String email, String password, Authority authority) {
+    public Member(String email, String password,String name,String gender, Authority authority) {
         this.email = email;
         this.password = password;
+        this.name = name;
+        this.gender = gender;
         this.authority = authority;
     }
 }

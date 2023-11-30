@@ -15,12 +15,15 @@ public class MemberReqDto {
     private String email;
     private String password;
     private String name;
+    private String gender;
     private String image;
     // MemberReqDto -> Member
     public Member toEntity(PasswordEncoder passwordEncoder) {
         return Member.builder()
                 .email(email)
                 .password(passwordEncoder.encode(password))
+                .name(name)
+                .gender(gender)
                 .authority(Authority.ROLE_USER)
                 .build();
     }

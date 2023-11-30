@@ -1,8 +1,6 @@
 import requests
-import schedule
 from bs4 import BeautifulSoup
 import json
-import time
 
 def perform_web_crawling():
     # 데이터 크롤링
@@ -31,36 +29,7 @@ def perform_web_crawling():
 
         data_dict = {"name" : th_text, "price" : td_price, "upDown" : td_ud, "rate" : td_rate}
         data_list.append(data_dict)
-
-
-    print("-------------------------------------------------------------------------------------------")
-
-    # 저장 내역 확인
-    # for data in data_list:
-    #     print(data)
-
-    print("-------------------------------------------------------------------------------------------")
-
-
-    # 데이터 전송 -> 스프링 부트
-    sp_url = "http://localhost:8111/stock/save"
-    headers = {"Content-Type": "application/json"}
-    res = requests.post(sp_url, data = json.dumps(data_list), headers= headers)
-
-    # 응답 확인
-    if res.status_code == 200:
-        print('데이터 전송 성공')
-    else:
-        print('데이터 전송 실패')
-
-
-# 1분에 한 번씩 크롤링 작업 수행
-schedule.every(15).minutes.do(perform_web_crawling)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
-
-
-
+    print(data_list)
+    res = json.dumps(data_list, ensure_ascii=False, indent=4)
+    return res
 

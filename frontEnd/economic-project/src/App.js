@@ -1,9 +1,11 @@
-import StockComponent from "./component/stockComponent";
+import StockComponent from "./component/StockComponent";
+import LoginComponent from "./component/LogInComponent";
 
 function App() {
   return (
     <>
       <StockComponent></StockComponent>
+      <LoginComponent></LoginComponent>
     </>
   );
 }
