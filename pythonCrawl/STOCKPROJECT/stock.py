@@ -22,14 +22,10 @@ def perform_web_crawling():
         td_ud = tr.em.text.strip()
         # bu_p 의 태그 뒤에 나오는 em이 %를 표시하는 태그이므로 find_next 사용
         td_rate = tr.select_one('td em[class^="bu_p"]').find_next('em').text.strip()
-        print(th_text)
-        print(td_price)
-        print(td_ud)
-        print(td_rate)
 
         data_dict = {"name" : th_text, "price" : td_price, "upDown" : td_ud, "rate" : td_rate}
         data_list.append(data_dict)
-    print(data_list)
+
     res = json.dumps(data_list, ensure_ascii=False, indent=4)
     return res
 

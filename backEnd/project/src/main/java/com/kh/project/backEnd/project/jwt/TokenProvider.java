@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 public class TokenProvider {
     private static final String AUTHORITIES_KEY ="auth";
     private static final String BEARER_TYPE = "Bearer"; // 토큰의 타입
-    private static final long ACCESS_TOKEN_EXPIRE_TIME = 30000; // 30초
+    private static final long ACCESS_TOKEN_EXPIRE_TIME = 3000000; // 30초
     private static final long REFRESH_TOKEN_EXPIRE_TIME = 1000 * 60 * 60 * 24; // 24시간
     private final Key key; // 토큰을 서명(signiture)하기 위한 Key
     Member member = new Member();
@@ -39,6 +39,7 @@ public class TokenProvider {
 
     // 토큰 생성
     public TokenDto generateTokenDto(Authentication authentication) {
+        log.warn("authentication {} : ", authentication);
         // 권한 정보 문자열 생성,
         String authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
@@ -53,8 +54,7 @@ public class TokenProvider {
         String accessToken = io.jsonwebtoken.Jwts.builder()
                 .setSubject(authentication.getName())
                 .claim(AUTHORITIES_KEY, authorities)
-                .claim("email", member.getEmail())
-                .claim("name", member.getName())
+
                 .setExpiration(accessTokenExpiresIn)
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
@@ -63,8 +63,7 @@ public class TokenProvider {
         String refreshToken = io.jsonwebtoken.Jwts.builder()
                 .setExpiration(refreshTokenExpiresIn)
                 .setSubject(authentication.getName())
-                .claim("email", member.getEmail())
-                .claim("name", member.getName())
+
                 .claim(AUTHORITIES_KEY, authorities)
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();

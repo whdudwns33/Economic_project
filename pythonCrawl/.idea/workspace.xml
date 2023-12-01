@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71ca696d-1b67-4855-b0f8-ddde24cba23d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/configuration/AppCongig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/constant/RestTem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/service/StockSkedulerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/movie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/weather.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backEnd/project/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/ProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/ProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/security/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/service/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/dto/MemberReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/dto/MemberReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/jwt/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/jwt/TokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/economic-project/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/economic-project/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/economic-project/src/axios/Axios.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/economic-project/src/axios/Axios.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/STOCKPROJECT/stock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stockNews.py" beforeDir="false" afterPath="$PROJECT_DIR$/STOCKPROJECT/stockNews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/economic-project/src/component/LogInComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/economic-project/src/component/LogInComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/STOCKPROJECT/stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/STOCKPROJECT/stock.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,34 +51,6 @@
       <recent name="D:\dev\Economic_project\pythonCrawl\CLASS" />
       <recent name="D:\dev\Economic_project\pythonCrawl\STOCKPROJECT" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="플라스크" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pythonCrawl" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\dev\Economic_project\pythonCrawl\CLASS\플라스크.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.플라스크" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

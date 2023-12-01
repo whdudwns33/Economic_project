@@ -1,18 +1,17 @@
 import Login from "./pages/Login";
-import StockComponent from "./component/stockComponent";
-
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
+import { CheckoutPage } from "./api/Checkout.tsx";
+import StockPage from "./pages/Stock.jsx";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <>
-    <Router>
-    <Routes>
-      <Route path="/" element={<Login />}></Route>
-      
-      <Route path="/stock" element={<StockComponent />}></Route>
-      
-    </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/stock" element={<StockPage />}></Route>
+          <Route path="/check" element={<CheckoutPage></CheckoutPage>}></Route>
+        </Routes>
+      </Router>
     </>
   );
 }

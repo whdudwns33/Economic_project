@@ -36,11 +36,13 @@ public class AuthService {
     
     // 로그인
     public TokenDto login(MemberReqDto requestDto) {
+        System.out.println("requestDto 이메일 :" + requestDto.getEmail());
+        System.out.println("requestDto 패스워드 :" + requestDto.getPassword());
         UsernamePasswordAuthenticationToken authenticationToken = requestDto.toAuthentication();
-        log.info("authenticationToken: {}", authenticationToken);
+        log.warn("authenticationToken: {}", authenticationToken);
 
         Authentication authentication = managerBuilder.getObject().authenticate(authenticationToken);
-        log.info("authentication: {}", authentication);
+        log.warn("authentication: {}", authentication);
 
         return tokenProvider.generateTokenDto(authentication);
     }
