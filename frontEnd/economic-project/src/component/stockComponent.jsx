@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import Axios from "../axios/Axios";
 import { useNavigate } from "react-router-dom";
-import { CheckoutPage } from "../api/Checkout";
+
 
 const StockComponent = () => {
   const [list, setList] = useState([]);
+  const [selectedName, setSelectedName] = useState(null);
   const [selectedPrice, setSelectedPrice] = useState(null);
   const navigate = useNavigate();
   const topDataList = async () => {
@@ -17,6 +18,8 @@ const StockComponent = () => {
     }
   };
 
+
+  // 10분 마다 정보를 요청은 하지만 새롭게 반영은 되지 않음.
   useEffect(() => {
     topDataList();
     const interverData = setInterval(() => {
@@ -25,12 +28,13 @@ const StockComponent = () => {
       // alert("갱신");
       console.log("새로운 요청");
     }, 600000);
-    return () => clearInterval(interverData);
+    return () => clearInterval(interverData); 
   }, []);
 
-  const onClickPay = (price) => {
-    setSelectedPrice(price);
-    navigate("/check");
+  const onClickPay = (name,Price) => {
+    setSelectedName(name);
+    setSelectedPrice(Price);
+    navigate(`/check?name=${name}&&Price=${Price}`);
   };
 
   return (
@@ -39,14 +43,13 @@ const StockComponent = () => {
         <div key={index}>
           <p>{index}</p>
           <p>name: {data.name}</p>
-          <p onClick={() => onClickPay(data.price)}>price: {data.price}</p>
+          <p onClick={() => onClickPay(data.name ,data.price)}>price: {data.price}</p>
           <p>upDown: {data.upDown}</p>
           <p>rate: {data.rate}</p>
           <br />
         </div>
       ))}
-      <button onClick={() => onClickPay(selectedPrice)}>구매</button>
-      <CheckoutPage money={selectedPrice} />
+      <button onClick={() => onClickPay()}>구매</button>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import axios from "axios";
 import Axios from "./Axios";
-import { useNavigate } from "react-router-dom";
-
+import { Common } from "./Common";
 // Axios 인스턴스 생성
 const Interceptor = axios.create({
   baseURL: Axios.KH_DOMAIN, // Axios의 KH_DOMAIN을 baseURL로 설정
@@ -26,7 +25,7 @@ Interceptor.interceptors.response.use(
       // refresh token이 존재하고, null이 아닌 경우
       if (refreshToken && refreshToken !== null) {
         // Axios.handleUnauthorized() 함수를 사용하여 새로운 access token을 얻음
-        const newAccessToken = await Axios.handleUnauthorized();
+        const newAccessToken = await Common.handleUnauthorized();
 
         // 새로 받은 access token이 존재하는 경우
         if (newAccessToken) {
@@ -45,9 +44,6 @@ Interceptor.interceptors.response.use(
 
           // "/" 경로로 이동
           window.location.href = "/";
-
-          // 또는 React Router의 useNavigate 훅을 사용하여 이동
-          useNavigate("/");
         }
       }
     }

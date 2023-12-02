@@ -1,8 +1,11 @@
 import axios from "axios";
+import Interceptor from '../axios/Interceptor';
+
 
 const KH_DOMAIN = "http://localhost:8111";
 
 const Axios = {
+  // 회원 가입
   signUp: async (email, password, name, gender) => {
     const signUpData = {
       email: email,
@@ -12,7 +15,7 @@ const Axios = {
     };
     return await axios.post(KH_DOMAIN + "/auth/sign", signUpData);
   },
-
+  // 로그인
   logIn: async (email, password) => {
     const logInData = {
       email: email,
@@ -24,29 +27,23 @@ const Axios = {
   dataTop: async () => {
     return await axios.get(`${KH_DOMAIN}/stock/topList`);
   },
-
-  handleUnauthorized: async () => {
-    const refreshToken = window.localStorage.get("refreshToken");
-    const accessToken = window.localStorage.get("accessToken");
-    const config = {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    };
-    try {
-      const res = await axios.post(
-        `${KH_DOMAIN}/auth/refresh`,
-        refreshToken,
-        config
-      );
-      console.log("auth/refresh : ", res.data);
-      window.localStorage.setItem("accessToken", accessToken);
-      return true;
-    } catch (err) {
-      console.log(err);
-      return false;
+  // 결재 내역 저장
+  saveAmount : async (email, amount) => {
+    const accessToken = window.localStorage.getItem("accessToken");
+    const saveAmountData = {
+      email : email,
+      amount : amount,
     }
+    return await Interceptor.post(`${KH_DOMAIN}/member/amount`, saveAmountData, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+    });
   },
+
+  
+  
 };
 
 export default Axios;

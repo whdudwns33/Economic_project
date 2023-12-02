@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71ca696d-1b67-4855-b0f8-ddde24cba23d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/controller/MemberContoroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/service/MemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/dto/MemberReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/dto/MemberReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/jwt/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/jwt/TokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/economic-project/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/economic-project/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/economic-project/src/axios/Axios.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/economic-project/src/axios/Axios.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/economic-project/src/component/LogInComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/economic-project/src/component/LogInComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/dto/MemberResDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/dto/MemberResDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backEnd/project/src/main/java/com/kh/project/backEnd/project/entity/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/economic-project/src/api/Checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/economic-project/src/api/Checkout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/economic-project/src/component/stockComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/economic-project/src/component/stockComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/STOCKPROJECT/stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/STOCKPROJECT/stock.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/Economic_project/pythonCrawl&quot;
   }
 }</component>
   <component name="RecentsManager">

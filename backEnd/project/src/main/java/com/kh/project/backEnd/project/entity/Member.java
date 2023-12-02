@@ -22,16 +22,17 @@ public class Member {
     private String password;
     private String name;
     private String gender;
-
+    private int amount;
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
     @Builder
-    public Member(String email, String password,String name,String gender, Authority authority) {
+    public Member(String email, String password,String name,String gender, int amount, Authority authority) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.gender = gender;
+        this.amount = amount;
         this.authority = authority;
     }
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from 'react-router-dom';
 import {
   PaymentWidgetInstance,
   loadPaymentWidget,
@@ -8,18 +9,35 @@ import {
 const clientKey = "test_ck_26DlbXAaV01OJX6EbLN5rqY50Q9R";
 const customerKey = "test_sk_5OWRapdA8dJwzRlXG1yRVo1zEqZK";
 
-export function CheckoutPage(props) {
-  const { money } = props;
-  const price = parseInt(money.replace(",", ""));
-  console.log("가격정보", price);
+export function CheckoutPage() {
+  const [price, setPrice] = useState(0);
+  // useParams 로 데이터 저장
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const name = queryParams.get("name");
+  const Price = queryParams.get("Price");
+  const setParamPrice = (Price) => {
+    if (Price !== null) {
+      Price = parseInt(Price.replace(",", ""));
+      setPrice(Price);
+    }
+  else {
+    alert("가격 정보를 다시 확인해 주세요");
+    // setParamPrice(Price);
+  }  }
+
+  console.log("주식 이름 정보 :", name);
+  console.log("주식 가격 정보 :", Price);
+  console.log("주식 가격 정보2 :", price);
 
   const paymentWidgetRef = useRef<PaymentWidgetInstance | null>(null);
   const paymentMethodsWidgetRef = useRef<ReturnType<
     PaymentWidgetInstance["renderPaymentMethods"]
   > | null>(null);
-  // const [price, setPrice] = useState(50000);
+  
 
   useEffect(() => {
+    setParamPrice(Price);
     (async () => {
       // ------  결제위젯 초기화 ------
       // 비회원 결제에는 customerKey 대신 ANONYMOUS를 사용하세요.
@@ -49,7 +67,7 @@ export function CheckoutPage(props) {
       paymentWidgetRef.current = paymentWidget;
       paymentMethodsWidgetRef.current = paymentMethodsWidget;
     })();
-  }, []);
+  }, [Price, price]);
 
   useEffect(() => {
     const paymentMethodsWidget = paymentMethodsWidgetRef.current;
@@ -73,10 +91,10 @@ export function CheckoutPage(props) {
           <input
             type="checkbox"
             onChange={(event) => {
-              // setPrice(event.target.checked ? price - 5000 : price + 5000);
+              setPrice(event.target.checked ? price - 1000 : price + 1000);
             }}
           />
-          5,000원 할인 쿠폰 적용
+          1,000원 할인 쿠폰 적용
         </label>
       </div>
       <div id="payment-widget" />

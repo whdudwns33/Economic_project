@@ -41,7 +41,7 @@ public class AuthController {
 
     // access토큰 재발급
     @GetMapping("/refresh")
-    public ResponseEntity<String> refreshToken(@RequestBody String refeshToken) {
-        return ResponseEntity.ok(tokenProvider.generateNewAccessToken(refeshToken));
+    public ResponseEntity<String> refreshToken(@RequestBody String Token) {
+        return ResponseEntity.ok(tokenProvider.generateNewAccessToken(Token));
     }
 }

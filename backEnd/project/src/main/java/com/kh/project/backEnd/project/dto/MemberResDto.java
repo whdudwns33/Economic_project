@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 public class MemberResDto {
     private String name;
     private String email;
+    private String gender;
+    private int amount;
     private String image;
     private LocalDateTime regDate;
 

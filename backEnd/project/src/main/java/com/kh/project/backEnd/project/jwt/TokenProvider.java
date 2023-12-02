@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 public class TokenProvider {
     private static final String AUTHORITIES_KEY ="auth";
     private static final String BEARER_TYPE = "Bearer"; // 토큰의 타입
-    private static final long ACCESS_TOKEN_EXPIRE_TIME = 3000000; // 30초
+    private static final long ACCESS_TOKEN_EXPIRE_TIME = 30000; //
     private static final long REFRESH_TOKEN_EXPIRE_TIME = 1000 * 60 * 60 * 24; // 24시간
     private final Key key; // 토큰을 서명(signiture)하기 위한 Key
     Member member = new Member();
@@ -54,7 +54,8 @@ public class TokenProvider {
         String accessToken = io.jsonwebtoken.Jwts.builder()
                 .setSubject(authentication.getName())
                 .claim(AUTHORITIES_KEY, authorities)
-
+//                    .claim("email", member.getEmail()) // member가 인스턴스 변수인 경우
+//                    .claim("name", member.getName()) // member가 인스턴스 변수인 경우
                 .setExpiration(accessTokenExpiresIn)
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
@@ -63,7 +64,8 @@ public class TokenProvider {
         String refreshToken = io.jsonwebtoken.Jwts.builder()
                 .setExpiration(refreshTokenExpiresIn)
                 .setSubject(authentication.getName())
-
+//                    .claim("email", member.getEmail()) // member가 인스턴스 변수인 경우
+//                    .claim("name", member.getName()) // member가 인스턴스 변수인 경우
                 .claim(AUTHORITIES_KEY, authorities)
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
@@ -80,11 +82,11 @@ public class TokenProvider {
     }
 
     // 새로운 accessToken
-    public String generateNewAccessToken(String refreshToken) {
+    public String generateNewAccessToken(String Token) {
         // refresh 토큰을 파싱하여 클레임을 얻습니다.
-        Claims refreshTokenClaims = parseClaims(refreshToken);
+        Claims refreshTokenClaims = parseClaims(Token);
         // refresh 토큰이 유효한지 확인합니다.
-        if (validateToken(refreshToken) && refreshTokenClaims.get(AUTHORITIES_KEY) != null) {
+        if (validateToken(Token) && refreshTokenClaims.get(AUTHORITIES_KEY) != null) {
             // refresh 토큰 클레임에서 사용자 정보를 추출합니다.
             // Long id 값
             String subject = refreshTokenClaims.getSubject();
@@ -104,8 +106,8 @@ public class TokenProvider {
             String newAccessToken = io.jsonwebtoken.Jwts.builder()
                     .setSubject(subject)
                     .claim(AUTHORITIES_KEY, authorities)
-                    .claim("email", member.getEmail()) // member가 인스턴스 변수인 경우
-                    .claim("name", member.getName()) // member가 인스턴스 변수인 경우
+//                    .claim("email", member.getEmail()) // member가 인스턴스 변수인 경우
+//                    .claim("name", member.getName()) // member가 인스턴스 변수인 경우
                     .setExpiration(new Date(System.currentTimeMillis() + ACCESS_TOKEN_EXPIRE_TIME))
                     .signWith(key, SignatureAlgorithm.HS512)
                     .compact();

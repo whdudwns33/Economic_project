@@ -19,6 +19,7 @@ public class MemberReqDto {
     private String name;
     private String gender;
     private String image;
+    private int amount;
 
     PasswordEncoder passwordEncoder;
     // MemberReqDto -> Member
@@ -28,6 +29,7 @@ public class MemberReqDto {
                 .password(passwordEncoder.encode(password))
                 .name(name)
                 .gender(gender)
+                .amount(amount)
                 .authority(Authority.ROLE_USER)
                 .build();
     }
